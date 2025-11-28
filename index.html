@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Thryve Green</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* Basic reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f7f2;
+      color: #222222;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #1b7a3c;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px 16px;
+    }
+
+    .hero {
+      padding: 40px 0;
+    }
+
+    .hero h1 {
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: #1b7a3c;
+    }
+
+    .hero p {
+      font-size: 16px;
+      max-width: 650px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: #1b7a3c;
+      color: white;
+    }
+
+    .btn-secondary {
+      background-color: #ffffff;
+      color: #1b7a3c;
+      border: 1px solid #1b7a3c;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    section h2 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #1b7a3c;
+    }
+
+    section p {
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 6px;
+      padding: 16px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #1b7a3c;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    footer {
+      background-color: #1b7a3c;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+    }
+
+    /* Simple responsive tweak */
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Thryve Green</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#farmers">Farmers</a>
+      <a href="#businesses">Businesses</a>
+      <a href="#facility">Facility</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- Hero section -->
+    <section class="hero">
+      <h1>Turning India’s Waste Into Clean Energy</h1>
+      <p>
+        Thryve Green converts agricultural and biomass waste into clean fuel that supports farmers,
+        reduces pollution, and gives industries a practical alternative to coal and firewood.
+      </p>
+      <div class="buttons">
+        <a href="#farmers" class="btn btn-primary">I am a Farmer or FPO</a>
+        <a href="#businesses" class="btn btn-secondary">I am a Business</a>
+      </div>
+    </section>
+
+    <!-- Problem section -->
+    <section>
+      <h2>India Has a Waste Problem and an Energy Problem</h2>
+      <p>
+        Every year, India produces millions of tons of crop residue and other biomass waste.
+        A large portion of it is burned in the open or left unused. At the same time,
+        many industries still depend heavily on coal and firewood for energy.
+      </p>
+      <p>
+        This results in more air pollution, wasted resources, and higher environmental and health costs.
+        The briquette industry may be mature, but India’s waste challenge is still far from solved.
+        The volume of agricultural residue produced each year leaves room for many responsible operators.
+        We chose to start here because it is practical, proven, and builds the right foundation
+        for the larger journey we want to create.
+      </p>
+    </section>
+
+    <!-- Solution cards -->
+    <section>
+      <h2>We Turn Waste Into Clean, Useful Fuel</h2>
+      <p>
+        Thryve Green takes biomass waste and converts it into high-quality briquettes
+        that offer a cleaner alternative to traditional fuels.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Work With Farmers and FPOs</h3>
+          <p>
+            We source crop residue and biomass from farmers and FPOs,
+            creating new income opportunities from material that often ends up burned.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Process Into Briquettes</h3>
+          <p>
+            Using efficient processes and machinery, we turn biomass into dense, uniform briquettes
+            suitable for industrial use.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Supply to Industries</h3>
+          <p>
+            Industries use our briquettes to reduce emissions, improve ESG reporting,
+            and move toward cleaner energy without major system changes.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision -->
+    <section>
+      <h2>Briquettes Are Just the Beginning</h2>
+      <p>
+        We started with briquettes because they solve a real problem today.
+        They reduce coal use and help prevent open burning.
+      </p>
+      <p>
+        Our long-term goal is to create multiple waste-to-resource solutions for India.
+        Our mission is to turn India’s waste into clean energy, materials, and fuels that
+        reduce pollution and make sustainability effortless.
+      </p>
+    </section>
+
+    <!-- Farmers preview -->
+    <section id="farmers">
+      <h2>For Farmers and FPOs</h2>
+      <p>
+        We help farmers and FPOs turn crop residue into an extra income source and reduce stubble burning.
+      </p>
+      <ul>
+        <li>Extra income from crop residue</li>
+        <li>Cleaner fields and faster preparation</li>
+        <li>Better air for your village</li>
+        <li>Flexible benefit options such as payment or barter</li>
+      </ul>
+    </section>
+
+    <!-- Businesses preview -->
+    <section id="businesses">
+      <h2>For Businesses and Industries</h2>
+      <p>
+        Biomass briquettes offer a cleaner and more consistent option compared to coal and firewood.
+      </p>
+      <ul>
+        <li>Lower emissions compared to coal</li>
+        <li>Support for ESG and sustainability goals</li>
+        <li>More consistent form than firewood</li>
+        <li>Support for cleaner production and inspections</li>
+      </ul>
+    </section>
+
+    <!-- Facility preview -->
+    <section id="facility">
+      <h2>Our Production Facility</h2>
+      <p>
+        We are setting up a biomass briquette facility focused on reliability, safety,
+        and long-term growth. Capacity and technical details will be updated as the
+        facility progresses.
+      </p>
+    </section>
+
+    <!-- About preview -->
+    <section id="about">
+      <h2>About Thryve Green</h2>
+      <p>
+        Thryve Green is a biomass innovation company focused on turning agricultural waste into
+        clean, useful products. We are starting with biomass briquettes and building toward
+        a future where waste powers India’s growth instead of polluting its air.
+      </p>
+    </section>
+
+    <!-- Contact preview -->
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>
+        Email: <a href="mailto:connect@thryvegreen.com">connect@thryvegreen.com</a>
+      </p>
+      <p>
+        Whether you are a farmer, an FPO, a business, or a partner, we would be glad to hear from you.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Thryve Green. All rights reserved.
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
