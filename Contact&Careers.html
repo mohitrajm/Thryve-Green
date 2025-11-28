@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact and Careers - Thryve Green</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background-color: #f5f7f2; color: #222; line-height: 1.6; }
+
+    header {
+      background-color: #1b7a3c;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo { font-weight: bold; font-size: 20px; }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px 16px;
+    }
+
+    h1, h2 { color: #1b7a3c; margin-bottom: 12px; }
+    p { margin-bottom: 12px; font-size: 15px; }
+
+    form {
+      background-color: #ffffff;
+      padding: 16px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      margin-bottom: 24px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    button {
+      background-color: #1b7a3c;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    button:hover {
+      opacity: 0.95;
+    }
+
+    footer {
+      background-color: #1b7a3c;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">Thryve Green</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="farmers.html">Farmers</a>
+      <a href="businesses.html">Businesses</a>
+      <a href="facility.html">Facility</a>
+      <a href="customers.html">Customers</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Contact Thryve Green</h1>
+    <p>
+      We are here to support farmers, FPOs, and businesses that want to move toward cleaner
+      and more sustainable energy.
+    </p>
+
+    <h2>Get In Touch</h2>
+    <p>Please fill out this form and we will respond as soon as possible.</p>
+
+    <!-- Contact form (no backend yet, can be wired later) -->
+    <form action="#" method="post">
+      <label for="name">Full Name</label>
+      <input id="name" name="name" type="text" required />
+
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email" required />
+
+      <label for="phone">Phone Number</label>
+      <input id="phone" name="phone" type="text" />
+
+      <label for="type">I am a</label>
+      <select id="type" name="type">
+        <option value="Farmer">Farmer</option>
+        <option value="FPO">FPO</option>
+        <option value="Business">Business</option>
+        <option value="Partner">Partner</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <label for="location">Location</label>
+      <input id="location" name="location" type="text" />
+
+      <label for="message">Message or Inquiry</label>
+      <textarea id="message" name="message"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <h2>Reach Us Directly</h2>
+    <p>Email: <a href="mailto:connect@thryvegreen.com">connect@thryvegreen.com</a></p>
+    <p>Phone: To be added</p>
+    <p>Address: To be added</p>
+
+    <h2>Careers at Thryve Green</h2>
+    <p>
+      We are building a team that cares about clean energy, innovation, and real impact at the ground level.
+      If you are interested in working with us, you can send your details using the form below.
+    </p>
+
+    <!-- Careers form (also simple for now) -->
+    <form action="#" method="post">
+      <label for="cname">Full Name</label>
+      <input id="cname" name="cname" type="text" required />
+
+      <label for="cemail">Email Address</label>
+      <input id="cemail" name="cemail" type="email" required />
+
+      <label for="cphone">Phone Number</label>
+      <input id="cphone" name="cphone" type="text" />
+
+      <label for="crole">Role You Are Interested In</label>
+      <input id="crole" name="crole" type="text" />
+
+      <label for="cmessage">Short Message</label>
+      <textarea id="cmessage" name="cmessage"></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <p style="font-size: 13px;">
+      Note: Form submissions are not yet connected to a backend system. You can also reach us directly at
+      <a href="mailto:connect@thryvegreen.com">connect@thryvegreen.com</a>.
+    </p>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Thryve Green. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
