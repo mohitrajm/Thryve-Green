@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Farmers and FPOs - Thryve Green</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Use the same styles as index.html for consistency -->
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; background-color: #f5f7f2; color: #222; line-height: 1.6; }
+
+    header {
+      background-color: #1b7a3c;
+      color: white;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo { font-weight: bold; font-size: 20px; }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+    }
+
+    nav a:hover { text-decoration: underline; }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 48px 16px;
+    }
+
+    h1, h2 { color: #1b7a3c; margin-bottom: 12px; }
+    p { margin-bottom: 12px; font-size: 15px; }
+    ul { margin-left: 18px; margin-bottom: 12px; }
+    li { margin-bottom: 6px; }
+
+    footer {
+      background-color: #1b7a3c;
+      color: white;
+      text-align: center;
+      padding: 16px;
+      font-size: 13px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">Thryve Green</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="farmers.html">Farmers</a>
+      <a href="businesses.html">Businesses</a>
+      <a href="facility.html">Facility</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Benefits for Farmers and FPOs</h1>
+    <p>Your crop residue has value. We help you earn from it while reducing stubble burning and improving air quality in your village.</p>
+
+    <h2>What You Can Expect</h2>
+    <ul>
+      <li>Extra income from crop residue. This is bonus income from material that normally has no market value.</li>
+      <li>Flexible benefit options such as direct payment or barter with biochar or soil enhancers.</li>
+      <li>Cleaner fields and faster preparation for the next crop cycle.</li>
+      <li>Better air quality in your village.</li>
+      <li>Long-term, trust-based partnership.</li>
+    </ul>
+
+    <h2>Types of Biomass We Accept</h2>
+    <ul>
+      <li>Paddy straw</li>
+      <li>Sugarcane trash or bagasse</li>
+      <li>Groundnut shells</li>
+      <li>Cotton stalks</li>
+      <li>Maize stalks</li>
+      <li>Sunflower waste</li>
+      <li>Coconut shells or husk</li>
+      <li>Any dry crop residue suitable for briquetting</li>
+    </ul>
+
+    <h2>How It Works</h2>
+    <ol>
+      <li>Contact us with location and type of residue.</li>
+      <li>We assess moisture, timelines, and logistics.</li>
+      <li>We arrange pickup based on volume.</li>
+      <li>You receive payment or the barter option selected.</li>
+    </ol>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Thryve Green. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
