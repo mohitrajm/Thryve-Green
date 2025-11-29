@@ -2,10 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Thryve Green</title>
+  <title>Thryve Green - Turning Waste Into Clean Energy</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <style>
-    /* Basic reset */
+    :root {
+      --green: #166534;
+      --green-dark: #14532d;
+      --bg: #f3f4f6;
+      --card-bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --accent-soft: #ecfdf5;
+      --border-subtle: #e5e7eb;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -13,317 +24,465 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f7f2;
-      color: #222222;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* HEADER */
+
     header {
-      background-color: #1b7a3c;
-      color: white;
-      padding: 16px 24px;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-subtle);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 12px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
-    .logo {
-      font-weight: bold;
-      font-size: 20px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 20%, #bbf7d0, #16a34a);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #ecfdf5;
+      font-weight: 700;
+    }
+
+    .brand-text-main {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .brand-text-sub {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 16px;
       font-size: 14px;
+      color: var(--muted);
+      padding: 4px 0;
+      border-bottom: 2px solid transparent;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: var(--green-dark);
+      border-bottom-color: var(--green-dark);
+    }
+
+    .nav-cta {
+      background-color: var(--green);
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    .nav-cta:hover {
+      background-color: var(--green-dark);
+    }
+
+    /* LAYOUT */
+
+    main {
+      flex: 1;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 24px 16px 48px 16px;
+      padding: 24px 16px 40px 16px;
     }
 
+    /* HERO */
+
     .hero {
-      padding: 40px 0;
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+      gap: 32px;
+      align-items: center;
+      margin-top: 16px;
+      margin-bottom: 40px;
+    }
+
+    .hero-left-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: var(--accent-soft);
+      color: var(--green-dark);
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+
+    .hero-left-label span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background-color: var(--green-dark);
     }
 
     .hero h1 {
       font-size: 32px;
+      line-height: 1.2;
       margin-bottom: 12px;
-      color: #1b7a3c;
+      color: var(--green-dark);
     }
 
-    .hero p {
-      font-size: 16px;
-      max-width: 650px;
+    .hero-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      max-width: 520px;
       margin-bottom: 20px;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 32px;
+      gap: 10px;
+      margin-bottom: 20px;
     }
 
     .btn {
-      padding: 10px 18px;
-      border-radius: 4px;
-      border: none;
-      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+      border-radius: 999px;
       font-size: 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
       text-decoration: none;
-      display: inline-block;
+      white-space: nowrap;
     }
 
     .btn-primary {
-      background-color: #1b7a3c;
-      color: white;
+      background-color: var(--green);
+      color: #ffffff;
+      border-color: var(--green);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--green-dark);
+      border-color: var(--green-dark);
     }
 
     .btn-secondary {
       background-color: #ffffff;
-      color: #1b7a3c;
-      border: 1px solid #1b7a3c;
+      color: var(--green-dark);
+      border-color: var(--border-subtle);
     }
 
-    section {
-      margin-bottom: 40px;
+    .btn-secondary:hover {
+      border-color: var(--green-dark);
+      color: var(--green-dark);
     }
 
-    section h2 {
-      font-size: 22px;
-      margin-bottom: 12px;
-      color: #1b7a3c;
+    .hero-footnote {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 480px;
     }
 
-    section p {
-      margin-bottom: 12px;
-      font-size: 15px;
+    .hero-right {
+      background: radial-gradient(circle at 10% 0%, #bbf7d0, #16a34a);
+      border-radius: 16px;
+      padding: 16px;
+      color: #ecfdf5;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 14px 35px rgba(15, 118, 110, 0.25);
+    }
+
+    .hero-right-inner {
+      background: rgba(12, 52, 35, 0.85);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .hero-pill {
+      font-size: 11px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background-color: rgba(16, 185, 129, 0.16);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+    }
+
+    .hero-metric {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    .hero-metric strong {
+      font-size: 14px;
+    }
+
+    .hero-note {
+      font-size: 11px;
+      opacity: 0.7;
+    }
+
+    /* SECTIONS */
+
+    .section {
+      margin-bottom: 32px;
+    }
+
+    .section-header {
+      margin-bottom: 14px;
+    }
+
+    .section-kicker {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .section h2 {
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: var(--green-dark);
+    }
+
+    .section p {
+      font-size: 14px;
+      color: var(--muted);
+      max-width: 720px;
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
+      margin-top: 14px;
     }
 
     .card {
-      background-color: white;
-      border-radius: 6px;
-      padding: 16px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 14px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 2px 4px rgba(15, 23, 42, 0.03);
     }
 
     .card h3 {
-      font-size: 18px;
-      margin-bottom: 8px;
-      color: #1b7a3c;
-    }
-
-    ul {
-      margin-left: 18px;
-      margin-bottom: 12px;
-    }
-
-    li {
-      margin-bottom: 4px;
       font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--green-dark);
     }
+
+    .card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .tag-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      font-size: 11px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background-color: #e5e7eb;
+      color: #374151;
+    }
+
+    .highlight-box {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      background-color: #ecfdf5;
+      border: 1px solid #bbf7d0;
+      font-size: 13px;
+      color: #064e3b;
+    }
+
+    /* FOOTER */
 
     footer {
-      background-color: #1b7a3c;
-      color: white;
-      text-align: center;
-      padding: 16px;
-      font-size: 13px;
+      border-top: 1px solid var(--border-subtle);
+      background-color: #ffffff;
+      font-size: 12px;
+      color: var(--muted);
     }
 
-    /* Simple responsive tweak */
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 26px;
-      }
+    .footer-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
 
-      header {
-        flex-direction: column;
+    /* MOBILE */
+
+    @media (max-width: 768px) {
+      .header-inner {
         align-items: flex-start;
       }
 
       nav {
-        margin-top: 8px;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+      }
+
+      .cards {
+        grid-template-columns: minmax(0, 1fr);
       }
     }
+
   </style>
 </head>
 <body>
-  <header>
-  <div class="logo">Thryve Green</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="farmers.html">Farmers</a>
-    <a href="Businesses.html">Businesses</a>
-    <a href="facility.html">Facility</a>
-    <a href="Cust_FPO.html">Customers</a>
-    <a href="About_us.html">About</a>
-    <a href="contact_careers.html">Contact</a>
-  </nav>
-</header>
-
-  <main class="container">
-    <!-- Hero section -->
-    <section class="hero">
-      <h1>Turning India’s Waste Into Clean Energy</h1>
-      <p>
-        Thryve Green converts agricultural and biomass waste into clean fuel that supports farmers,
-        reduces pollution, and gives industries a practical alternative to coal and firewood.
-      </p>
-      <div class="buttons">
-        <a href="#farmers" class="btn btn-primary">I am a Farmer or FPO</a>
-        <a href="#businesses" class="btn btn-secondary">I am a Business</a>
+  <div class="page">
+    <header>
+      <div class="header-inner">
+        <div class="brand">
+          <div class="brand-mark">T</div>
+          <div>
+            <div class="brand-text-main">Thryve Green</div>
+            <div class="brand-text-sub">Turning waste into clean energy</div>
+          </div>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="farmers.html">Farmers</a>
+          <a href="Businesses.html">Businesses</a>
+          <a href="facility.html">Facility</a>
+          <a href="Cust_FPO.html">Customers</a>
+          <a href="About_us.html">About</a>
+          <a href="contact_careers.html">Contact</a>
+          <a href="contact_careers.html" class="nav-cta">Contact us</a>
+        </nav>
       </div>
-    </section>
+    </header>
 
-    <!-- Problem section -->
-    <section>
-      <h2>India Has a Waste Problem and an Energy Problem</h2>
-      <p>
-        Every year, India produces millions of tons of crop residue and other biomass waste.
-        A large portion of it is burned in the open or left unused. At the same time,
-        many industries still depend heavily on coal and firewood for energy.
-      </p>
-      <p>
-        This results in more air pollution, wasted resources, and higher environmental and health costs.
-        The briquette industry may be mature, but India’s waste challenge is still far from solved.
-        The volume of agricultural residue produced each year leaves room for many responsible operators.
-        We chose to start here because it is practical, proven, and builds the right foundation
-        for the larger journey we want to create.
-      </p>
-    </section>
+    <main>
+      <div class="container">
+        <!-- HERO -->
+        <section class="hero">
+          <div>
+            <div class="hero-left-label">
+              <span></span>
+              Clean fuel from agricultural waste
+            </div>
+            <h1>Turning India’s waste into clean, practical energy</h1>
+            <p class="hero-subtitle">
+              Thryve Green converts agricultural and biomass waste into clean fuel that supports farmers,
+              reduces pollution, and gives industries a practical alternative to coal and firewood.
+            </p>
+            <div class="hero-buttons">
+              <a href="farmers.html" class="btn btn-primary">I am a farmer or FPO</a>
+              <a href="Businesses.html" class="btn btn-secondary">I am a business</a>
+            </div>
+            <p class="hero-footnote">
+              We start with biomass briquettes today and build toward a future where more of India’s waste
+              becomes useful energy and materials.
+            </p>
+          </div>
 
-    <!-- Solution cards -->
-    <section>
-      <h2>We Turn Waste Into Clean, Useful Fuel</h2>
-      <p>
-        Thryve Green takes biomass waste and converts it into high-quality briquettes
-        that offer a cleaner alternative to traditional fuels.
-      </p>
-      <div class="cards">
-        <div class="card">
-          <h3>Work With Farmers and FPOs</h3>
+          <div class="hero-right">
+            <div class="hero-right-inner">
+              <div class="hero-pills">
+                <div class="hero-pill">Biomass briquettes</div>
+                <div class="hero-pill">Farmers and FPOs</div>
+                <div class="hero-pill">Industrial fuel</div>
+              </div>
+              <div class="hero-metric">
+                <strong>Two problems, one direction.</strong> India produces massive amounts of crop residue
+                while industries still rely on coal and firewood.
+              </div>
+              <div class="hero-note">
+                We are building solutions that connect both sides in a cleaner way. Our focus is on
+                practical, on-the-ground impact that supports farmers, businesses, and the environment.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROBLEM -->
+        <section class="section">
+          <div class="section-header">
+            <div class="section-kicker">The challenge</div>
+            <h2>India has a waste problem and an energy problem</h2>
+            <p>
+              Every year, millions of tons of crop residue are burned in the open. At the same time,
+              industries depend heavily on coal and firewood. This increases air pollution, wastes
+              resources, and leaves farmers without alternatives.
+            </p>
+          </div>
           <p>
-            We source crop residue and biomass from farmers and FPOs,
-            creating new income opportunities from material that often ends up burned.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Process Into Briquettes</h3>
-          <p>
-            Using efficient processes and machinery, we turn biomass into dense, uniform briquettes
-            suitable for industrial use.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Supply to Industries</h3>
-          <p>
-            Industries use our briquettes to reduce emissions, improve ESG reporting,
-            and move toward cleaner energy without major system changes.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vision -->
-    <section>
-      <h2>Briquettes Are Just the Beginning</h2>
-      <p>
-        We started with briquettes because they solve a real problem today.
-        They reduce coal use and help prevent open burning.
-      </p>
-      <p>
-        Our long-term goal is to create multiple waste-to-resource solutions for India.
-        Our mission is to turn India’s waste into clean energy, materials, and fuels that
-        reduce pollution and make sustainability effortless.
-      </p>
-    </section>
-
-    <!-- Farmers preview -->
-    <section id="farmers">
-      <h2>For Farmers and FPOs</h2>
-      <p>
-        We help farmers and FPOs turn crop residue into an extra income source and reduce stubble burning.
-      </p>
-      <ul>
-        <li>Extra income from crop residue</li>
-        <li>Cleaner fields and faster preparation</li>
-        <li>Better air for your village</li>
-        <li>Flexible benefit options such as payment or barter</li>
-      </ul>
-    </section>
-
-    <!-- Businesses preview -->
-    <section id="businesses">
-      <h2>For Businesses and Industries</h2>
-      <p>
-        Biomass briquettes offer a cleaner and more consistent option compared to coal and firewood.
-      </p>
-      <ul>
-        <li>Lower emissions compared to coal</li>
-        <li>Support for ESG and sustainability goals</li>
-        <li>More consistent form than firewood</li>
-        <li>Support for cleaner production and inspections</li>
-      </ul>
-    </section>
-
-    <!-- Facility preview -->
-    <section id="facility">
-      <h2>Our Production Facility</h2>
-      <p>
-        We are setting up a biomass briquette facility focused on reliability, safety,
-        and long-term growth. Capacity and technical details will be updated as the
-        facility progresses.
-      </p>
-    </section>
-
-    <!-- About preview -->
-    <section id="about">
-      <h2>About Thryve Green</h2>
-      <p>
-        Thryve Green is a biomass innovation company focused on turning agricultural waste into
-        clean, useful products. We are starting with biomass briquettes and building toward
-        a future where waste powers India’s growth instead of polluting its air.
-      </p>
-    </section>
-
-    <!-- Contact preview -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>
-        Email: <a href="mailto:connect@thryvegreen.com">connect@thryvegreen.com</a>
-      </p>
-      <p>
-        Whether you are a farmer, an FPO, a business, or a partner, we would be glad to hear from you.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    © <span id="year"></span> Thryve Green. All rights reserved.
-  </footer>
-
-  <script>
-    // Set current year in footer
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+            The briquette
